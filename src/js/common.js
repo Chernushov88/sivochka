@@ -31,8 +31,8 @@
     location.hostname !== "127.0.0.1" &&
     location.host !== ""
   ) {
-    // var files = ["/img/svg/symbol_sprite.html", "/img/svg/*"],
-    var files = ["//andreypost.github.io/sivochka/img/svg/symbol_sprite.html", "/img/svg/*"],
+     var files = ["/img/svg/symbol_sprite.html", "/img/svg/*"],
+    //var files = ["//andreypost.github.io/sivochka/img/svg/symbol_sprite.html", "/img/svg/*"],
       // var files = ["/img/symbol_sprite.html", "/wp-content/themes/ukrmeatbest/img/gradient.svg"],
       revision = 9;
 
@@ -144,6 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
     slidesToShow: 5,
     infinite: false,
     arrows: true,
+    adaptiveHeight: true,
     responsive: [{
       breakpoint: 1100,
       settings: {

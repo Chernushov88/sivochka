@@ -9,6 +9,7 @@ var gulp = require("gulp"),
   autoprefixer = require("gulp-autoprefixer"),
   image = require("gulp-image"),
   webp = require("gulp-webp"),
+
   svgSprite = require("gulp-svg-sprites"),
   svgmin = require("gulp-svgmin"),
   cheerio = require("gulp-cheerio"),
@@ -35,9 +36,7 @@ gulp.task("svg-sprite", function () {
           parserOptions: { xmlMode: true },
         })
       )
-      // cheerio plugin create unnecessary string '>', so replace it.
       .pipe(replace("&gt;", ">"))
-      // build svg sprite
       .pipe(
         svgSprite({
           mode: "symbols",
@@ -75,7 +74,6 @@ gulp.task("svg-sprite", function () {
           ],
         })
       )
-      // .pipe(gulp.dest("./img/"))
       .pipe(gulp.dest("./img/svg"))
   );
 });
@@ -274,7 +272,13 @@ gulp.task("connect", function () {
 function watchFiles() {
   gulp.watch(
     "./src/scss/*.scss",
-    gulp.series(["clean-old-css", "compile-sass", "minify-css", "clean", "minifyhtml"])
+    gulp.series([
+      "clean-old-css",
+      "compile-sass",
+      "minify-css",
+      "clean",
+      "minifyhtml"
+    ])
   );
   gulp.watch("./src/*.html", gulp.series(["minifyhtml"]));
   gulp.watch("./src/img/svg/*.svg", gulp.series(["svg-sprite"]));
@@ -286,11 +290,13 @@ function watchFiles() {
       "minify-main-js",
       "scripts",
       "clean-js",
-      "minifyhtml",
-      // "createPhpForWp",
+      "minifyhtml"
     ])
   );
-  gulp.watch("./src/img/*", gulp.series(["image-to-webp", "image-min", "svg-sprite"]));
+  gulp.watch(
+    "./src/img/*",
+    gulp.series(["image-to-webp", "image-min", "svg-sprite"])
+  );
 }
 
 const build = gulp.series(
