@@ -78,9 +78,7 @@
 })(window, document);
 
 document.addEventListener("DOMContentLoaded", () => {
-
   const body = document.querySelector('body')
-
   const burgerNav = (burger, canvas, modal) => {
     let touchLength = 0
     const toggle = () => {
