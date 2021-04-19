@@ -182,7 +182,10 @@ document.addEventListener('submit', e => {
   const html = document.querySelector("html").getAttribute("lang");
   const result = form.querySelector("button[type='submit']");
   const tel = form.querySelector("input[type='tel']");
-  console.log(tel.value);
+  const name = form.querySelector("input[name=\"name\"]");
+  console.log('form', form);
+  console.log('name', name.value);
+  console.log('tel.value', tel.value);
   tel.addEventListener("input", () => {
     tel.classList.remove("validation-error");
   });

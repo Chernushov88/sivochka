@@ -1,0 +1,353 @@
+$hoverColor     :#E96C0E;
+$iconColor      :#8794B8;
+$mainColor      :#171E30;
+$borderColor    : #D1D6E3;
+$lineColor      : #F0F3FA;
+$gilroyLight    : 'GilroyLight';
+$gilroyRegular  : 'GilroyRegular';
+$gilroyMedium   : 'GilroyMedium';
+$gilroySemiBold : 'GilroySemiBold';
+$gilroyBold     : 'GilroyBold';
+$neumann        : 'Neumann';
+
+body {
+  *{
+    outline: 0px solid;
+  }
+  &.new_desing{
+    .flexcentbet{
+      @media screen and (max-width: 640px){
+        flex-wrap: wrap;
+      }
+    }
+    header {
+      @media screen and (max-width: 640px){
+        flex-wrap: wrap;
+        background: #192e63 url(../img/bg_header_02.png) center 100% no-repeat;
+        background-size: contain;
+      }
+      h1{
+        margin: 90px 0 40px;
+        font-family: Neumann;
+      }
+      .list{
+        max-width: 500px;
+        @media screen and (max-width: 640px){
+          padding-bottom: 300px;
+        }
+        li{
+          position: relative;
+          padding-bottom: 30px;
+          font-size: 18px;
+          line-height: 24px;
+          color: #FFFFFF;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          svg{
+            min-width: 20px;
+            margin-right: 16px;
+            fill: none;
+          }
+
+        }
+      }
+    }
+    .round__list>li{
+      align-items: center;
+    }
+    #about{
+      display: flex;
+      align-items: flex-start;
+      height: 515px;
+      @media screen and (max-width: 1024px){
+        height: auto;
+      }
+      @media screen and (max-width: 768px){
+        padding-top: 60px;
+      }
+      >article {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        //margin-right: 60px;
+        @media screen and (max-width: 640px){
+          padding-bottom: 40px;
+        }
+        h2{
+          line-height: 1;
+          margin-bottom: 0;
+          font-family: Neumann;
+        }
+        .about__lists {
+          //margin-bottom: auto;
+          margin: 0;
+          @media screen and (max-width: 1024px){
+            margin: 50px 0;
+          }
+          .round__list {
+            //max-width: 265px;
+          }
+        }
+
+        & + img{
+          //max-height: 516px;
+        }
+      }
+
+      .call__buttons{
+        position: relative;
+        max-width: 259px;
+        height: 53px;
+        &:hover button{
+          background: linear-gradient(180deg,#6583D5 4.09%,#1656E0 99.5%);
+        }
+        button{
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 52.9px;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          color: #171E30;
+          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+          border-radius: 25px;
+          box-shadow: unset;
+          background: url(../img/btn-bg.png) no-repeat;
+          background-size: contain;
+          //border: 1px solid linear-gradient(180deg,#6583D5 4.09%,#1656E0 99.5%);
+          transition: background 1s ease;
+        }
+      }
+
+    }
+    .career {
+
+      article {
+        h2{
+          margin-top: 90px;
+          font-family: 'GilroyMedium';
+          font-size: 36px;
+          line-height: 40px;
+        }
+      }
+      .relative{
+        align-items: flex-start;
+      }
+      .sertificate__icons {
+        margin-top: 50px;
+        text-align: center;
+
+        >div {
+
+          max-width: 165px;
+
+          svg {
+            width : 60px;
+            height: 60px;
+            fill  : $iconColor;
+          }
+
+          h5 {
+            font-family   : $gilroyBold;
+            font-size     : 18px;
+            margin        : 10px auto;
+            padding-bottom: 10px;
+            position      : relative;
+          }
+
+          h5::after {
+            content     : '';
+            position    : absolute;
+            left        : 0;
+            right       : 0;
+            bottom      : 0;
+            height      : 1px;
+            width       : 48px;
+            margin-left : auto;
+            margin-right: auto;
+            background  : $iconColor;
+          }
+
+          p {
+            font-family: $gilroyLight;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+    .services {
+      &__header{
+        text-transform: uppercase;
+      }
+      .section>div {
+        .services__list {
+          .round__list {
+            max-width: 50%;
+            @media(max-width: 640px){
+              max-width: 100%;
+            }
+          }
+          img{
+            margin-top: 25px;
+          }
+        }
+        .services__call{
+          margin-top: 45px;
+          @media(max-width: 640px){
+            .services__contract{
+              width: 100%;
+              br{
+                display: none;
+              }
+            }
+            .call__buttons{
+              position: relative;
+              margin: 30px 0 50px;
+              width: 100%;
+              button {
+                width: 100%;
+                right: 0px;
+              }
+            }
+          }
+        }
+      }
+      &-width-full{
+        .section>div .services__list .round__list {
+          max-width: 100% !important;
+        }
+      }
+    }
+    #service_advokat{
+      margin-bottom: 64px;
+      padding: 59px 0;
+      background: #F0F3FA;
+      h2{
+        position: relative;
+        line-height: 1;
+        margin-bottom: 28px;
+        padding-top: 60px;
+        text-transform: uppercase;
+        font-family: Neumann;
+        font-size: 70px;
+        line-height: 1.2;
+        @media(max-width: 640px){
+          padding-top: 20px;
+          font-size: 40px;
+          line-height: 48px;;
+        }
+        &::before {
+          content: "\201C";
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          font-size: 120px;
+          font-style: normal;
+          color: #192E63;
+          opacity: 0.5;
+        }
+      }
+      article{
+        margin-right: 40px;
+        p {
+          margin-bottom: 30px;
+          font-family: GilroyLight;
+          font-style: italic;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 24px;
+          color: #09132C;
+
+        }
+      }
+    }
+    .button_form{
+      #contactForm{
+        margin-bottom: 0;
+        padding-top: 75px;
+        padding-bottom: 66px;
+        @media(max-width: 640px){
+          padding-top: 40px;
+          padding-bottom: 40px;
+        }
+      }
+      .flexstretchbet {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .section>div{
+        border: 0;
+      }
+      h2{
+        font-family: Neumann;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 70px;
+        line-height: 1.15;
+        text-align: center;
+        text-transform: uppercase;
+        @media(max-width: 640px){
+          font-size: 40px;
+          line-height: 48px;;
+        }
+      }
+      .form-flex{
+        display: flex;
+        @media screen and (max-width: 1024px){
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        li{
+          position: relative;
+          margin-left: 20px;
+          margin-bottom: 20px;
+          &:first-child{
+            margin-left: 0;
+          }
+          .call__buttons{
+            width: 260px;
+            margin: 0;
+          }
+          input{
+            margin: 0;
+            box-sizing: border-box;
+            @media screen and (max-width: 1024px){
+              max-width: 330px;
+            }
+          }
+        }
+      }
+    }
+    footer{
+      background: #09132C;
+    }
+    #sertificate{
+      background: linear-gradient(0deg, rgba(239, 242, 250, 0) 0%, #EFF2FA 100%);
+      h2{
+        font-family: Neumann;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 70px;
+        line-height: 1.15;
+        text-transform: uppercase;
+        color: #171E30;
+      }
+      blockquote{
+        background: transparent;
+        &::after{
+          background: transparent;
+        }
+      }
+    }
+
+  }
+}
+
