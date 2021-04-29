@@ -151,7 +151,7 @@ const getJsPath = async () => {
 
 gulp.task("minifyhtml", function () {
   return gulp
-    .src(["./src/*.html"])
+    .src(["./src/**/*.html"])
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(
       htmlreplace({
@@ -250,7 +250,7 @@ gulp.task("clean-js", function () {
 });
 
 gulp.task("clean-old-css", function () {
-  return gulp.src(["./css"], { read: false, allowEmpty: true }).pipe(clean());
+  //return gulp.src(["./css"], { read: false, allowEmpty: true }).pipe(clean());
 });
 gulp.task("clean-old-js", function () {
   return gulp.src(["./js"], { read: false, allowEmpty: true }).pipe(clean());
@@ -280,7 +280,7 @@ function watchFiles() {
       "minifyhtml"
     ])
   );
-  gulp.watch("./src/*.html", gulp.series(["minifyhtml"]));
+  gulp.watch("./src/**/*.html", gulp.series(["minifyhtml"]));
   gulp.watch("./src/img/svg/*.svg", gulp.series(["svg-sprite"]));
   gulp.watch(
     js,

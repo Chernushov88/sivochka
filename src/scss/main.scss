@@ -166,7 +166,31 @@ footer nav a {
 }
 
 header nav {
+  position: relative;
   white-space: nowrap;
+  .lang{
+    display: flex;
+    &-wrapp{
+      position: absolute;
+      top: 20px;
+      right: 0;
+      @media(max-width:1024px) {
+        position: static;
+      }
+    }
+    li{
+      a{
+        padding: 10px 13px !important;
+        border: 0 !important;
+        &.active{
+          font-weight: bold;
+          color: #E96C0E;
+
+        }
+      }
+
+    }
+  }
 }
 
 a,

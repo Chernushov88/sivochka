@@ -61,7 +61,7 @@ $neumann        : 'Neumann';
         font-size: 45px;
         line-height: 1.22;
         font-weight: 400;
-        text-transform: uppercase;
+        text-transform: inherit;
         @media(max-width:768px){
           font-size: 35px;
           line-height: 40px;

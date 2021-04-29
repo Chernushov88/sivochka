@@ -1,13 +1,12 @@
 <?php
-$recepient = "chernushov88@gmail.com,lexstatus2016@gmail.com";
+//$recepient = "chernushov88@gmail.com";
+$recepient = "lexstatus2016@gmail.com";
 $sitename = "sivochka";
 
 $phone = trim($_POST["phone"]);
 $name = trim($_POST["name"]);
 
-$phone = trim($_POST["phone"]);
-$name = trim($_POST["name"]);
-/*
+
 $data_form = trim($_POST["data_form"]);
 $mail = trim($_POST["mail"]);
 $country = trim($_POST["country"]);
@@ -40,7 +39,7 @@ $product_id = trim($_POST["product_id"]);
 $GA_client_id = $_COOKIE['_ga'];
 $hmid = trim($_POST["hmid"]);
 $invite_id = trim($_POST["invite_id"]);
-*/
+/**/
 
 $pagetitle = "Заявка на sivochka";
 $messageTB = "
@@ -67,7 +66,12 @@ curl_close($ch);
 $token = "bot1404308978:AAHuYHQaLXG6U-epkLgpFDlK-kVXnUSkhpQ";
 $chatID = "-401661750";
 
-sendMessage($chatID, $messageTB, $token);
+
+if($phone == '+38(000) 000-00-00'){
+  sendMessage('-1001253520742', $messageTB, 'bot546026860:AAGbAoQE9a8EdJVBXB7IkbxavL6gkvLUrCU');
+} else {
+  sendMessage($chatID, $messageTB, $token);
+}
 
 // Для отправки HTML-письма должен быть установлен заголовок Content-type
 $headers  = 'MIME-Version: 1.0' . "\r\n";
