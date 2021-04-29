@@ -250,7 +250,7 @@ gulp.task("clean-js", function () {
 });
 
 gulp.task("clean-old-css", function () {
-  //return gulp.src(["./css"], { read: false, allowEmpty: true }).pipe(clean());
+  return gulp.src(["./css"], { read: false, allowEmpty: true }).pipe(clean());
 });
 gulp.task("clean-old-js", function () {
   return gulp.src(["./js"], { read: false, allowEmpty: true }).pipe(clean());
@@ -273,7 +273,7 @@ function watchFiles() {
   gulp.watch(
     "./src/scss/*.scss",
     gulp.series([
-      "clean-old-css",
+      //"clean-old-css",
       "compile-sass",
       "minify-css",
       "clean",
@@ -285,7 +285,7 @@ function watchFiles() {
   gulp.watch(
     js,
     gulp.series([
-      "clean-old-js",
+      //"clean-old-js",
       "copy-scripts",
       "minify-main-js",
       "scripts",
@@ -300,8 +300,8 @@ function watchFiles() {
 }
 
 const build = gulp.series(
-  "clean-old-css",
-  "clean-old-js",
+  //"clean-old-css",
+  //"clean-old-js",
   "compile-sass",
   "minify-css",
   "minify-main-js",
