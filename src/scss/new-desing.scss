@@ -20,6 +20,12 @@ body {
         flex-wrap: wrap;
       }
     }
+    &.article header{
+      @media screen and (max-width: 640px){
+        min-height: 80vh;
+        background: #192e63 url(../img/bg_header_02.png) center 100% no-repeat;
+      }
+    }
     header {
       @media screen and (max-width: 640px){
         flex-wrap: wrap;
