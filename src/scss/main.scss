@@ -502,7 +502,9 @@ body {
 
           .round__list {
             max-width: 255px;
-
+            &:first-child li{
+              padding-bottom: 0;
+            }
             li {
               padding: 8px 0;
             }
@@ -1261,9 +1263,13 @@ body.active {
 
           .about__lists {
 
-            .round__list li {
-              padding: 4px 0;
+            .round__list {
+              
+              li {
+                padding: 4px 0;
+              }
             }
+            
           }
 
           blockquote::before {
